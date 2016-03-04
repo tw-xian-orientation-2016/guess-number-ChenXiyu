@@ -16,4 +16,20 @@ public class CampareNumberTest {
 
         assertThat("0A0B",is(result));
     }
+    @Test
+    public void outPut_4A0B_WHEN_All_Right(){
+        CampareNumber CB = new CampareNumber();
+        String a = "1234" , b = "1234";
+        String result = CB.campare(a , b);
+
+        assertThat("4A0B",is(result));
+    }
+    @Test
+    public void outPut_0A4B_WHEN_Out_of_order(){
+        CampareNumber CB = new CampareNumber();
+        String a = "1234" , b = "4321";
+        String result = CB.campare(a, b);
+
+        assertThat("0A4B",is(result));
+    }
 }

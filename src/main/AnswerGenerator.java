@@ -7,11 +7,12 @@ public class AnswerGenerator {
     public AnswerGenerator(Random r){
         this.r = r ;
     }
+
     public String generatAnswer(){
         String result = "";
         boolean[] b = new boolean[10];
-
-        for (int i = 0; i < 4 ; ) {
+        int i = 0;
+        while(i < 4) {
             int x = this.r.nextInt(10);
             if(!b[x]){
                 b[x] = true;

@@ -1,4 +1,4 @@
-package CampareNumberTest;
+package test_main;
 
 import main.AnswerGenerator;
 import org.junit.Test;

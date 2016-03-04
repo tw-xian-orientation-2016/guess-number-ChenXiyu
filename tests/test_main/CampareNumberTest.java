@@ -1,8 +1,11 @@
-package CampareNumberTest;
+package test_main;
 
+import main.AnswerGenerator;
 import main.CampareNumber;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Random;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -25,26 +28,6 @@ public class CampareNumberTest {
     @Test
     public void outPut_0A4B_WHEN_Out_of_order(){
         assertThat("0A4B",is(CB.campare("3421","4312")));
-    }
-    @Test
-    public void test_Answer_is_legal(){
-        AnswerGenerator AG = new AnswerGenerator();
-
-        String answer = AG.generatAnswer();
-
-        assertThat(true,is(this.verifyAnswer(answer)));
-
-    }
-
-    public boolean verifyAnswer(String a){
-        for (int i = 0; i < a.length(); i++) {
-            for (int j = i+1; j < a.length(); j++) {
-                if (a.charAt(i) == a.charAt(j)){
-                    return false;
-                }
-            }
-        }
-        return true;
     }
 }
 

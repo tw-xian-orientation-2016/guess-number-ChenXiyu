@@ -1,16 +1,15 @@
 package main;
 
 public class Guess {
-    AnswerGenerator answerGenerator ;
+    String answer ;
     CampareNumber campareNumber;
     public Guess(AnswerGenerator  answerGenerator , CampareNumber campareNumber){
-        this.answerGenerator = answerGenerator;
+        this.answer= answerGenerator.generatAnswer();
         this.campareNumber = campareNumber;
     }
 
     public String guessNumber(String input){
-        String answer = this.answerGenerator.generatAnswer();
-        String result = this.campareNumber.campare(input, answer);
+        String result = this.campareNumber.campare(input, this.answer);
         return result;
     }
 }

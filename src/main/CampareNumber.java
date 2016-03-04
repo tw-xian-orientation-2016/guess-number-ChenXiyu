@@ -5,7 +5,7 @@ public class CampareNumber {
       int A = 0 , B = 0;
       for (int j = 0; j < b.length() ; j++) {
          if (a.indexOf(b.charAt(j)) == -1) {
-            break;
+            continue;
          }else {
             B ++ ;
          }

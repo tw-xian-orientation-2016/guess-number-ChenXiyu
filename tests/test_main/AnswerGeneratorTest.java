@@ -11,22 +11,20 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class AnswerGeneratorTest {
+    AnswerGenerator answerGenerator;
+    Random random = mock(Random.class);
+
     @Test
-    public  void return_correct_number(){
-        Random r = mock(Random.class);
-        when(r.nextInt(10)).thenReturn(1,2,3,4);
+    public void return_correct_number(){
+        when(random.nextInt(10)).thenReturn(1,2,3,4);
+        answerGenerator =new AnswerGenerator(random);
 
-        AnswerGenerator AG =new AnswerGenerator(r);
-
-        assertThat("1234",is(AG.generatAnswer()));
+        assertThat("1234",is(answerGenerator.generatAnswer()));
     }
     @Test
     public void return_leagal_number(){
-        Random r = mock(Random.class);
-        when(r.nextInt(10)).thenReturn(1,1,2,2,2,3,4);
-
-        AnswerGenerator AG =new AnswerGenerator(r);
-
-        assertThat("1234",is(AG.generatAnswer()));
+        when(random.nextInt(10)).thenReturn(1,1,2,3,4);
+        answerGenerator =new AnswerGenerator(random);
+        assertThat("1234",is(answerGenerator.generatAnswer()));
     }
 }
